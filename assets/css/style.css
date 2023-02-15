@@ -7,3 +7,10 @@ header{
     height : 100px;
     background-color : #000;
 }
+
+.header{
+    max-width : 1140px;
+    height : 100px;
+    background-color: red;
+    margin: auto;
+}
