@@ -234,7 +234,13 @@ CSS DE ÁREAS ESPECÍFICAS
 .section-service{
     flex: 1;
     text-align: center;
+    border-right: 1px solid #333;
+    padding: 15px;
 }
+.section-service:first-child{
+    border-left: 1px solid #333;
+}
+
 .section-service h4{
     margin-top: 20px;
     text-transform: uppercase;
