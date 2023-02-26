@@ -344,3 +344,107 @@ CSS DE ÁREAS ESPECÍFICAS
 .section-projects-photoarea:hover .section-projects-photoinfo{
     display: flex;
 }
+
+.bg-team{
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+}
+
+.section-team-area{
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-team{
+    overflow: hidden;
+    max-width: 880px;
+    margin: auto;
+}
+
+.section-team .sliders{
+    width: 1000vw;
+    height: 100%;
+}
+
+.section-team .slide{
+    width: 280px;
+    height: 100%;
+    display: inline-block;
+    background-color: white;
+    margin-right: 20px;
+    min-height: 300px;
+}
+
+.section-team .slidearea{
+    display: flex;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.section-team-area .sliders-pointers{
+    height: 20px;
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-team-area .pointer{
+    width: 15px;
+    height: 15px;
+    border: 3px solid #b28756;
+    border-radius: 8px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.section-team-area .pointer.active{
+    background-color: #b28756; 
+}
+
+.section-team-avatar{
+    width: 150px;
+    height: auto;
+}
+
+.section-team-name{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 30px;
+}
+
+.section-team-role{
+    font-size: 14px;
+    color: black;
+    margin-top: 5px;
+}
+
+.section-team-social{
+    display: flex;
+}
+
+.section-team-social a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: #999;
+    border-radius: 13px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.section-team-social a:hover,
+.section-team-social .active{
+    background-color: #b28756;
+}
