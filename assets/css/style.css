@@ -448,3 +448,153 @@ CSS DE ÁREAS ESPECÍFICAS
 .section-team-social .active{
     background-color: #b28756;
 }
+
+.section-clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-client img{
+    display: block;
+    margin: auto;
+}
+
+.section-client-name{
+    font-size: 20px;
+    margin-top: 23px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.section-client-role{
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    color: #999;
+}
+
+.section-client .aspa{
+    margin-top: 15px;
+}
+
+.section-client-description{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+    max-width: 880px;
+}
+
+.section-clients .sliders-pointers{
+    width: 100vw;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.section-clients .pointer{
+    width: 15px;
+    height: 15px;
+    border: 3px solid #b28756;
+    border-radius: 8px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.section-clients .pointer.active{
+    background-color: #b28756; 
+}
+
+.section-client-separation{
+    width: 1500px;
+    height: 1px;
+    background-color: rgb(194, 194, 194);
+    margin-top: 30px;
+}
+
+.section-client-anuncios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1140px;
+}
+
+.section-client-anuncio{
+    display: inline-block;
+    padding: 40px;
+}
+
+.section-price-tables{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-price-table-card,
+.section-price-card-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-price-table-card{
+    height: 250px;
+    margin: auto;
+}
+
+.section-price-card-desc{
+    margin-top: 20px;
+}
+
+.section-price-card-title,
+.section-price-card-month{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+.section-price-card-title{
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.section-price-card-money{
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+.section-price-card-month{
+    color: #999;
+    font-size: 10px;
+}
+
+.section-price-card-button{
+    display: inline-block;
+    background-color: #333;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    margin-top: 30px;
+    padding: 15px 45px;
+    border-radius: 15px;
+}
+
+.section-price-card-button.active,
+.section-price-card-button:hover{
+    background-color: #b28756;
+}
+
+.section-price-card-separation{
+    height: 1px;
+    width: 10px;
+    background-color: #999;
+    margin: 8px 0px;
+}
