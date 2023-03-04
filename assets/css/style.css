@@ -511,7 +511,7 @@ CSS DE ÁREAS ESPECÍFICAS
 }
 
 .section-client-separation{
-    width: 1500px;
+    width: 100vw;
     height: 1px;
     background-color: rgb(194, 194, 194);
     margin-top: 30px;
@@ -534,6 +534,8 @@ CSS DE ÁREAS ESPECÍFICAS
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 70px;
+    margin-bottom: 140px;
 }
 
 .section-price-table-card,
@@ -597,4 +599,120 @@ CSS DE ÁREAS ESPECÍFICAS
     width: 10px;
     background-color: #999;
     margin: 8px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.section-premiums{
+    display: flex;
+}
+
+.section-premium-features
+{
+    display: flex;
+    padding: 30px;
+}
+
+.section-premium-features>div{
+    margin: 0 5px;
+}
+
+.section-premium-desc>h1{
+    text-transform: uppercase;
+}
+
+.section-premium-desc>p {
+    margin: 8px 0px;
+}
+
+.section-premium-feature-some div
+{
+    display: inline-block;
+}
+
+.section-premium-feature-some div{
+    height: 1px;
+    width: 13px;
+    background-color: #999;
+    margin: 8px 4px;
+}
+
+.section-area-premium .sliders-pointers{
+    width: 100vw;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.section-area-premium .pointer{
+    width: 15px;
+    height: 15px;
+    border: 3px solid #b28756;
+    border-radius: 8px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.section-area-premium{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-area-premium .pointer.active{
+    background-color: #b28756; 
+}
+
+
+
+
+
+
+.section-somefacts{
+    display: flex;
+    align-items: center;
+}
+
+.section-somefact{
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.section-somefact h4{
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.section-somefact h3{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: #b28756;
+}
+
+.section-somefact div{
+    width: 26px;
+    height: 4px;
+    background-color: #999;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+
+.section-somefact p{
+    margin-top: 30px;
+    font-size: 13px;
+    color:#999;
 }
