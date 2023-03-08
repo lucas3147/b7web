@@ -75,7 +75,7 @@ header{
     color: white;
     text-decoration: none;
     margin-top: 30px;
-    padding: 10px 30px;
+    padding: 15px 60px;
     border-radius: 20px;
 }
 
@@ -715,4 +715,97 @@ CSS DE ÁREAS ESPECÍFICAS
     margin-top: 30px;
     font-size: 13px;
     color:#999;
+}
+
+
+
+
+
+.section-contact-social{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.section-contact-social div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-contact-social div>a{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.section-contact-social div>a{
+    margin-left: 20px;
+}
+
+.default.light.Contact{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 370px;
+    text-align: center;
+    justify-content: space-around;
+}
+
+
+.section-contact-form a
+{
+    margin: 0 auto;
+}
+
+.section-contact-form div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#section-contact-nome,
+#section-contact-email{
+    width: 48%;
+}
+
+.section-contact-input{
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #999;
+    text-transform: uppercase;
+}
+
+.section-contact-input:focus{
+    box-shadow: 0 0 0 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: 0;
 }
