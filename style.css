@@ -1,7 +1,6 @@
 .container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    grid-auto-rows: 200px;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -11,4 +10,19 @@
     padding: 20px;
     color: white;
     font-size: 25px;
+}
+
+.item1{
+    /*  Grid Area
+    1. grid-row-start
+    2. grid-column-start
+    3. grid-row-end
+    4. grid-column-start
+    */
+
+    grid-area: 1 / 1 / 4 / 3;
+}
+
+.item6{
+    grid-area: 4 / 2 / 6 / 4;
 }
