@@ -29,8 +29,6 @@ header{
 .logoimg{
     width: 80px;
     height: 80px;
-    background-color: #b28756;
-    border-radius: 40px;
 }
 .menu{
     flex: 1;
@@ -768,7 +766,11 @@ CSS DE ÁREAS ESPECÍFICAS
 
 
 
-
+.section-contact{
+    height: 430px;
+    display: flex;
+    align-items: center;
+}
 
 .section-contact-form{
     display: flex;
@@ -804,6 +806,143 @@ CSS DE ÁREAS ESPECÍFICAS
 }
 
 .section-contact-input:focus{
+    box-shadow: 0 0 0 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: 0;
+}
+
+
+
+
+
+
+
+
+.section-map{
+    background-image: url('../images/mapa.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+}
+
+.section-map--area{
+    width: 100vw;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.section-map--info{
+    width: 50%;
+    padding: 30px;
+    background-color: white;
+    color: black;
+}
+
+.section-map--info-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.section-map--info-item-img{
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    padding: 10px;
+    background-color: #999;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.section-map--info-item-img img{
+    width: 20px;
+    height: auto;
+}
+
+
+
+
+
+footer{
+    background-color: black;
+
+}
+
+.footer{
+    max-width: 1140px;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer p{
+    color: white;
+}
+
+.footer>div{
+    width: 340px;
+    margin: auto;
+}
+
+.footer-social{
+    height: 150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer-social div{
+    width: inherit;
+}
+
+.footer-social-icon{
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    padding: 10px;
+    background-color: #999;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.footer-social-icon:hover,
+.footer-social-icon.active{
+    background-color: #b28756;
+}
+
+.footer-description p{
+    color: #999;
+}
+
+
+.footer-email-subscribe{
+    background-color: #333;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-email-subscribe input{
+    height: 35px;
+    width: 180px;
+    border: none;
+    border-bottom: 1px solid #999;
+    color: white;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+}
+
+.footer-email-subscribe input:focus{
     box-shadow: 0 0 0 0;
     border: none;
     border-bottom: 1px solid #999;
