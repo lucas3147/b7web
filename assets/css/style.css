@@ -64,6 +64,10 @@ header{
     color: #ccc;
 }
 
+.menu-opener{
+    display: none;
+}
+
 .button{
     display: inline-block;
     background-color: #b28756;
@@ -483,7 +487,7 @@ CSS DE ÁREAS ESPECÍFICAS
     text-align: center;
     font-size: 15px;
     color: #555;
-    max-width: 880px;
+    max-width: 750px;
 }
 
 .section-clients .sliders-pointers{
@@ -532,8 +536,7 @@ CSS DE ÁREAS ESPECÍFICAS
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
-    margin-bottom: 140px;
+    height: 700px;
 }
 
 .section-price-table-card,
@@ -544,7 +547,7 @@ CSS DE ÁREAS ESPECÍFICAS
 }
 
 .section-price-table-card{
-    height: 250px;
+    height: 400px;
     margin: auto;
 }
 
@@ -947,4 +950,376 @@ footer{
     border: none;
     border-bottom: 1px solid #999;
     outline: 0;
+}
+
+
+
+
+
+
+@media (min-width: 480px) and (max-width: 800px){
+
+    .logo{
+        margin-left: 30px;
+    }
+
+    .menu-opener{
+        display: block;
+        width: 40px;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        background-color:rgba(0, 0, 0, 0.9);
+        width: 70vw;
+        height: calc(100vh - 100px);
+        top: 100px;
+        right: 0;
+    }
+
+    .menu ul{
+        flex-direction: column;
+    }
+
+    .menu li a{
+        font-weight: bold;
+        height: 80px;
+        font-size: 27px;
+        margin-left: 50px;
+    }
+
+    .menu .active a{
+        color:#b28756;
+    }
+
+    .menu .active a,
+    .menu ul a:hover,
+    .menu ul a{
+        border-bottom: none;
+    }
+
+
+
+    .section-aboutus{
+        flex-direction: column;
+    }
+
+    .section-aboutus-left{
+        margin: 30px;
+    }
+
+    .section-aboutus-left{
+        text-align: center;
+    }
+
+    .section-aboutus-right{
+        width: auto;
+    }
+
+    .section-services{
+        flex-wrap: wrap;
+    }
+
+    .section-service{
+        min-width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .section-service:first-child{
+        border-left: 0;
+    }
+
+
+    .section-team{
+        max-width: 580px;
+    }
+
+    .section-client-description{
+        max-width: 450px;
+    }
+
+    .section-price-tables{
+        flex-wrap: wrap;
+    }
+
+    .section-price-table-card{
+        min-width: 280px;
+    }
+
+    .section-premiums{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-area-premium-img,
+    .section-premium-desc{
+        min-width: 200px;
+        margin-top: 30px;
+    }
+
+    .section-premium-features{
+        padding: 30px 90px;
+    }
+
+    .section-somefacts{
+        flex-wrap: wrap;
+    }
+
+    .section-somefact{
+        min-width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .section-contact-form{
+        width: 500px;
+    }
+
+    .section-map{
+        padding: 30px;
+    }
+
+    .section-map--info{
+        width: auto;
+    }
+
+    .section-map--info-item{
+        margin-bottom: 20px;
+    }
+
+    .section-map--area{
+        width: auto;
+    }
+
+    .section-map--info-item:last-child{
+        margin-bottom: 0;
+    }
+
+
+    .footer{
+        flex-wrap: wrap;
+    }
+
+    .footer div{
+        margin-bottom: 30px;
+    }
+
+    .footer div:last-child{
+        margin-bottom: 0;
+    }
+
+    .footer-email-subscribe{
+        min-width: 50%;
+    }
+}
+
+@media (max-width: 480px){
+
+    .logo{
+        margin-left: 30px;
+    }
+
+    .menu-opener{
+        display: block;
+        width: 40px;
+        margin-right: 30px;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        background-color:rgba(0, 0, 0, 0.9);
+        width: 80vw;
+        height: calc(100vh - 100px);
+        top: 100px;
+        right: 0;
+    }
+
+    .menu ul{
+        flex-direction: column;
+    }
+
+    .menu li a{
+        font-weight: bold;
+        height: 60px;
+        font-size: 19px;
+        margin-left: 30px;
+    }
+
+    .menu .active a{
+        color:#b28756;
+    }
+
+    .menu .active a,
+    .menu ul a:hover,
+    .menu ul a{
+        border-bottom: none;
+    }
+
+    .banner h1{
+        font-size: 30px;
+    }
+
+    .section-aboutus{
+        flex-direction: column;
+    }
+
+    .section-aboutus-left{
+        margin: 30px;
+    }
+
+    .section-aboutus-left{
+        text-align: center;
+    }
+
+    .section-aboutus-right{
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .section-aboutus-right img {
+        width: 100%;
+    }
+
+    .section-services{
+        flex-wrap: wrap;
+    }
+
+    .section-service{
+        min-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .section-service:first-child{
+        border-left: 0;
+    }
+
+
+    .section-team{
+        max-width: 280px;
+    }
+
+    .section-projects-filters{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .section-projects-photo{
+        width: 330px;
+    }
+
+    .section-projects-photoarea{
+        width: 310px;
+        height: 190px;
+    }
+
+    .section-client-description{
+        max-width: 320px;
+    }
+
+    .section-price-tables{
+        flex-wrap: wrap;
+        height: 1600px;
+    }
+
+    .section-price-table-card{
+        min-width: 300px;
+    }
+
+    .section-premiums{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-area-premium-img,
+    .section-premium-desc{
+        min-width: 200px;
+        margin-top: 30px;
+    }
+
+    .section-premium-img img{
+        max-width: 280px;
+        margin: auto;
+    }
+
+    .section-premium-features{
+        padding: 30px 90px;
+    }
+
+    .section-somefacts{
+        flex-wrap: wrap;
+    }
+
+    .section-somefact{
+        min-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .section-contact-social-icons{
+        flex-wrap: wrap;
+    }
+
+    .section-contact-tellaboutus {
+        min-width: 340px;
+    }
+
+    .section-contact-form{
+        width: 300px;
+    }
+
+    .section-contact-form div{
+        flex-direction: column;
+        height: 100px;
+    }
+
+    #section-contact-nome,
+    #section-contact-email{
+        width: 100%;
+    }
+
+    .section-map{
+        padding: 0;
+        padding-bottom: 250px;
+    }
+
+    .section-map--info{
+        width: auto;
+    }
+
+    .section-map--info-item{
+        margin-bottom: 20px;
+    }
+
+    .section-map--area{
+        width: auto;
+    }
+
+    .section-map--info-item:last-child{
+        margin-bottom: 0;
+    }
+
+
+    .footer{
+        flex-wrap: wrap;
+    }
+
+    .footer div{
+        margin-bottom: 30px;
+    }
+
+    .footer div:last-child{
+        margin-bottom: 0;
+    }
+
+    .footer-email-subscribe{
+        min-width: 50%;
+    }
 }
