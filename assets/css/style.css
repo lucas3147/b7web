@@ -957,7 +957,7 @@ footer{
 
 
 
-@media (min-width: 480px) and (max-width: 800px){
+@media (min-width: 580px) and (max-width: 800px){
 
     .logo{
         margin-left: 30px;
@@ -1117,7 +1117,7 @@ footer{
     }
 }
 
-@media (max-width: 480px){
+@media (max-width: 580px){
 
     .logo{
         margin-left: 30px;
