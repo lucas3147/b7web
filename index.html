@@ -1,97 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <title>Curso de JavaScript</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starbucks</title>
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="models">
+        <div class="pizza-item">
+            <a href="">
+                <div class="pizza-item--img"><img src="" /></div>
+                <div class="pizza-item--add">+</div>
+            </a>
+            <div class="pizza-item--price">R$ --</div>
+            <div class="pizza-item--name">--</div>
+            <div class="pizza-item--desc">--</div>
+        </div>
+        <div class="cart--item">
+            <img src="" />
+            <div class="cart--item-nome">--</div>
+            <div class="cart--item--qtarea">
+                <button class="cart--item-qtmenos">-</button>
+                <div class="cart--item--qt">1</div>
+                <button class="cart--item-qtmais">+</button>
+            </div>
+        </div>
+    </div>
     <header>
-        <div class="line"></div>
-        <div class="container header--area">
-            <div class="header--left">
-                <a href="/"><img src="assets/images/logo.png" alt=""></a>
-            </div>
-            <div class="header--right">
-                <div class="header--search">
-                    <form action="">
-                        <input type="text" name="search" placeholder="Search">
-                        <button>
-                            <img src="assets/images/loupe.png" alt="lupa">
-                        </button>
-                    </form>
-                </div>
-                <div class="header--menu">
-                    <img src="assets/images/menu.png" alt="">
-                </div>
-            </div>
-        </div>
+        <div class="menu-openner"><span>0</span>🛒</div>
     </header>
-    <section class="banner">
-        <div class="container">
-            <h1>Starbucks® <br> Happy Hour</h1>
-            <span>We’ll meet you in your inbox. Drink deals are on their way.</span>
-            <div class="banner--images">
-                <img src="assets/images/c1.jpg" alt="">
-                <img src="assets/images/c2.jpg" alt="">
-                <img src="assets/images/c3.jpg" alt="">
+    <main>
+        <h1>Pizzas</h1>
+        <div class="pizza-area"></div>
+    </main>
+    <aside>
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <h1>Suas Pizzas</h1>
+            <div class="cart"></div>
+            <div class="cart--details">
+                <div class="cart--totalitem subtotal">
+                    <span>Subtotal</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem desconto">
+                    <span>Desconto (-10%)</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem total big">
+                    <span>Total</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--finalizar">Finalizar a compra</div>
             </div>
         </div>
-    </section>
-    <section class="area1">
-        <div class="area1--content">
-            <div class="bar"></div>
-            <h2>Four Drinks, A Million <br> Reasons</h2>
-            <div class="area1--quote"> <em>"Just love yourself and you're set."</em> – Lady Gaga</div>
-            <div class="area1--text">Lady Gaga and Starbucks share a mission: to build a kinder, braver world. Through the Born This Way Foundation, Lady Gaga has inspired her fans to embrace kindness in their communities—online and in the world. With your help, we can empower young people to spread more kindness.</div>
+    </aside>
+    <div class="pizzaWindowArea">
+        <div class="pizzaWindowBody">
+            <div class="pizzaInfo--cancelMobileButton">Voltar</div>
+            <div class="pizzaBig">
+                <img src="" />
+            </div>
+            <div class="pizzaInfo">
+                <h1>--</h1>
+                <div class="pizzaInfo--desc">--</div>
+                <div class="pizzaInfo--sizearea">
+                    <div class="pizzaInfo--sector">Tamanho</div>
+                    <div class="pizzaInfo--sizes">
+                        <div data-key="0" class="pizzaInfo--size">PEQUENA <span>--</span></div>
+                        <div data-key="1" class="pizzaInfo--size">MÉDIO <span>--</span></div>
+                        <div data-key="2" class="pizzaInfo--size selected">GRANDE <span>--</span></div>
+                    </div>
+                </div>
+                <div class="pizzaInfo--pricearea">
+                    <div class="pizzaInfo--sector">Preço</div>
+                    <div class="pizzaInfo--price">
+                        <div class="pizzaInfo--actualPrice">R$ --</div>
+                        <div class="pizzaInfo--qtarea">
+                            <button class="pizzaInfo--qtmenos">-</button>
+                            <div class="pizzaInfo--qt">1</div>
+                            <button class="pizzaInfo--qtmais">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
+                <div class="pizzaInfo--cancelButton">Cancelar</div>
+            </div>
+        </div>
+    </div>
 
-            <a href="" class="button">learn more</a>
-        </div>
-        <div class="area1--img1">
-        </div>
-        <div class="area1--img2">
-        </div>
-    </section>
-    <section class="area2">
-        <div class="area2--content">
-            <div class="bar"></div>
-            <h2>Introducing Vanilla Sweet Cream Cold Brew—Sweet, Creamy, Cold, Bold.</h2>
-            <div class="area2--text">Just before serving, our slow-steeped custom blend Starbucks® Cold Brew Coffee is topped with a delicate float of house-made vanilla sweet cream that cascades throughout the cup.</div>
-
-            <a href="" class="button">learn more</a>
-        </div>
-        <div class="area2--img1">
-        </div>
-        <div class="area2--img2">
-        </div>
-    </section>
-    <section class="area3">
-        <div class="area3--content">
-            <h2>The New Ultra Caramel<br> Frappuccino Is Here!</h2>
-            <div class="area3--text">Congrats on doing that thing! This calls for caramel. Lots of it. With cold brew whipped cream. The new Ultra Caramel Frappuccino is here!</div>
-            <a href="" class="button">learn more</a>
-        </div>
-        <div class="area3--img1">...</div>
-    </section>
-    <section class="area4">
-        <div class="area4--content">
-            <div class="bar"></div>
-            <h2>Kindness Starts<br>
-                With A Cup</h2>
-            <div class="area4--text">ntroducing the Cups of Kindness collection: four very special drinks as delicious and refreshing as they are beautiful. Two new creations, Matcha Lemonade and Violet Drink, will join Pink Drink and Ombré Pink Drink as instant summer favorites.</div>
-            <a href="" class="button">learn more</a>
-        </div>
-        <div class="area4--img1">
-        </div>
-    </section>
-    <section class="area5">
-        
-    </section>
-    <footer>
-        Projeto Starbucks Criado pelo Lucas Lima <br>
-        Créditos do layout para o Nicepage
-    </footer>
+    <script type="text/javascript" src="assets/js/pizzas.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
