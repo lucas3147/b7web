@@ -1,36 +1,82 @@
-let totalSlides = document.querySelectorAll('.slider--item').length;
-let currentSlide = 0;
+let b7validator = {
+    handleSubmit: (event)=>{
+        event.preventDefault();
+        let send = true;
 
-document.querySelector('.slider--width').style.width = 
-`calc(100vw * ${totalSlides})`;
-document.querySelector('.slider--controls').style.height = 
-`${document.querySelector('.slider').clientHeight}px`;
+        let inputs = form.querySelectorAll('input');
 
+        b7validator.clearErrors();
 
-document.querySelector('.voltar').addEventListener('click', goPrev);
+        for(let i = 0; i < inputs.length; i++){
+            let input = inputs[i];
+            let check = b7validator.checkInput(input);
 
-document.querySelector('.proximo').addEventListener('click', goNext);
+            if (check !== true) {
+                send = false;
+                
+                b7validator.showError(input, check);
+            }
+        }
 
-function updateMargin() {
-    let sliderItemWidth = document.querySelector('.slider--item').clientWidth;
-    let nextMargin = (currentSlide * sliderItemWidth);
-    document.querySelector('.slider--width').style.marginLeft = `-${nextMargin}px`;
-}
+        if (send) {
+            form.submit();
+        }
+    },
+    checkInput: (input) => {
+        let rules = input.getAttribute('data-rules');
 
-function goPrev() {
-    currentSlide--;
-    if (currentSlide < 0) {
-        currentSlide = totalSlides - 1;
-    }
-    updateMargin();
-}
+        if (rules != null) {
+            rules = rules.split('|');
+            for (let rule in rules) {
+                let rDetails = rules[rule].split('=');
 
-function goNext() {
-    currentSlide++;
-    if (currentSlide > (totalSlides-1)){
-        currentSlide = 0;
-    }
-    updateMargin();
-}
+                switch(rDetails[0]) {
+                    case 'required':
+                        if (input.value == ''){
+                            return 'Campo não pode ser vazio';
+                        }
+                    break;
+                    case 'min':
+                        if(input.value.length < rDetails[1]){
+                            return `Campo deve ter pelo menos ${rDetails[1]} caracteres`;
+                        }
+                    break;
+                    case 'email':
+                        if (input.value != ''){
+                            let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            if (!regex.test(input.value.toLowerCase())) {
+                                return 'Email não reconhecido!';
+                            }
+                        }
+                    break;
+                }
+            }
+        }
 
-setInterval(goPrev, 5000);
+        return true;
+    },
+    showError: (input, error) => {
+        input.style.borderColor = 'red';
+
+        let errorElement = document.createElement('div');
+        errorElement.classList.add('error');
+        errorElement.innerHTML = error;
+
+        input.parentElement.insertBefore(errorElement, input.nextElementSibling);
+    } ,
+    clearErrors: () => {
+        let inputs = form.querySelectorAll('input');
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].style = '';            
+        }
+
+        let errorElements = document.querySelectorAll('.error');
+        for (let i = 0; i < errorElements.length; i++) {
+            errorElements[i].remove();
+        }
+    }   
+};
+
+let form = document.querySelector('.b7validator');
+form.addEventListener('submit', b7validator.handleSubmit);
+

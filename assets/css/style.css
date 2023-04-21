@@ -1,62 +1,55 @@
 * {
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0;
 }
 
-header {
-    margin: 0;
+.screen{
     display: flex;
-    flex-direction: column;
     height: 100vh;
-    background-color: #CCC;
-}
-.header {
-    background-color: red;
-    height: 50px;
-}
-.slider {
-    flex: 1;
-    background-color: green;
-    overflow: hidden;
 }
 
-.slider--width{
-    height: 100%;
-    display: flex;
-    transition: all ease 0.5s;
-}
-.slider--item {
-    width: 100vw;
-    height: inherit;
-    background-position: center;
-    background-size: cover;
+.leftSide {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
-    font-family: 'arial';
-    text-shadow: 0px 1px 1px #333;
-    font-size: 50px;
 }
-.slider--controls {
-    position: absolute;
-    z-index: 99;
+
+.leftSide img {
+    max-width: 500px;
+    height: auto;
+}
+
+.rightSide {
+    width: 400px;
+    background-color: #DDD;
+    padding: 50px;
+}
+
+.rightSide label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.rightSide input {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    outline: 0;
 }
-.slider--control{
-    width: 70px;
-    height: 30px;
-    background-color: black;
-    border-radius: 15%;
-    overflow: hidden;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.button {
     cursor: pointer;
+    background-image: linear-gradient(to right, cadetblue, rgb(25, 121, 124));
+    color: white;
+}
+
+.error {
+    font-size: 16px;
+    color: red;
 }

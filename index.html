@@ -4,28 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlideShow</title>
+    <title>Validador de Formulário</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header"></div>
-        <div class="slider">
-            <div class="slider--controls">
-                <div class="slider--control voltar">voltar</div>
-                <div class="slider--control proximo">próximo</div>
-            </div>
-            <div class="slider--width" style="width: calc(100vw * 3)">
-                <div class="slider--item" style="background-image: url('assets/images/slide1.jpg');">Jogos irados</div>
-                <div class="slider--item" style="background-image: url('assets/images/slide2.jpg');">para aproveitar</div>
-                <div class="slider--item" style="background-image: url('assets/images/slide3.jpg');">da melhor forma</div>
+    <div class="screen">
+        <div class="leftSide">
+            <img src="assets/images/sejaBemVindo.png" action="cadastro.php" alt="">
+        </div>
+        <div class="rightSide">
+            <h1>Crie uma conta</h1>
+
+            <form method="POST" class="b7validator">
+                <label for="">
+                    Seu nome: <br>
+                    <input type="text" name="name" data-rules="required|min=2">
+                </label>
+                <label for="">
+                    Seu email: <br>
+                    <input type="text" name="email" data-rules="email">
+                </label>
+                <label for="">
+                    Sua senha: <br>
+                    <input type="password" name="password" data-rules="required|min=4">
+                </label>
+                <label for="">
+                    <input type="submit" class="button" value="Cadastrar">
+                </label>
+            </form>
+
+            <div>
+                Já tem uma conta? <a href="#">Faça seu Login</a>
             </div>
         </div>
-    </header>
-    <section>
-        <h1>Resto do Slide</h1>
-    </section>
-
+    </div>
+    
     <script src="assets/js/script.js"></script>
 </body>
 </html>
