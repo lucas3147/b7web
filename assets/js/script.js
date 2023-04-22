@@ -1,33 +1,66 @@
-function guiaPagina(className){
-    let element = document.querySelector(className);
-    window.scrollTo({
-        top: getPosition(element).y - 100,
-        behavior: 'smooth'
-    });
-    console.log('Passou por aqui!');
+//Initial Data
+let currentColor = 'black';
+let canDraw = false;
+let mouseX = 0;
+let mouseY = 0;
+
+let screen = document.querySelector('#tela');
+let context = screen.getContext('2d');
+
+//Events
+document.querySelectorAll('.colorArea .color').forEach(item => {
+    item.addEventListener('click', colorClickEvent);
+})
+
+screen.addEventListener('mousedown', mouseDownEvent);
+screen.addEventListener('mousemove', mouseMoveEvent);
+screen.addEventListener('mouseup', mouseUpEvent);
+document.querySelector('.clear').addEventListener('click', clearScreen);
+
+//Functions
+function colorClickEvent(e) {
+    let color = e.target.getAttribute('data-color');
+    currentColor = color;
+
+    document.querySelector('.color.active').classList.remove('active');
+    e.target.classList.add('active');
 }
 
-function getPosition(el){
-    // default positions
-    var xPos = 0,
-        yPos = 0;
-    // loop
-    while (el) {
-        if ( el.tagName === "BODY" ){
-            // deal with browser quirks with body/window/document and page scroll
-            var xScroll = el.scrollLeft || document.documentElement.scrollLeft,
-                yScroll = el.scrollTop  || document.documentElement.scrollTop;
-            xPos += ( el.offsetLeft - xScroll + el.clientLeft );
-            yPos += ( el.offsetTop  - yScroll + el.clientTop );
-        } else {
-           // for all other non-BODY elements
-           xPos += ( el.offsetLeft - el.scrollLeft + el.clientLeft );
-           yPos += ( el.offsetTop  - el.scrollTop  + el.clientTop );
-        }
-        el = el.offsetParent;
+function mouseDownEvent(e) {
+    canDraw = true;
+    mouseX = e.pageX - screen.offsetLeft;
+    mouseY = e.pageY - screen.offsetTop;
+}
+
+function mouseMoveEvent(e) {
+    if(canDraw) {
+        draw(e.pageX, e.pageY);
     }
-    return {
-       x: xPos,
-       y: yPos
-    };
-};
+}
+
+function mouseUpEvent() {
+    canDraw = false;
+}
+
+function draw(posX, posY) {
+    let pointX = posX - screen.offsetLeft;
+    let pointY = posY - screen.offsetTop;
+
+    context.beginPath();
+    context.lineWidth = 5;
+    context.lineJoin = 'round';
+    context.moveTo(mouseX, mouseY);
+    context.lineTo(pointX, pointY);
+    context.closePath();
+    context.strokeStyle = currentColor;
+    context.stroke();
+    
+    mouseX = pointX;
+    mouseY = pointY;
+}
+
+function clearScreen() {
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+
+}
