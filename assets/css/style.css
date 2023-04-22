@@ -71,6 +71,7 @@ h1 {
     width: 120px;
     height: 7px;
     background-color: #FFF;
+    transform: rotate(90deg);
 }
 .p_h {
     width: 70px;
