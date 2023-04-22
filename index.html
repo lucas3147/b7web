@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validador de Formulário</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Bateria</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <div class="screen">
-        <div class="leftSide">
-            <img src="assets/images/sejaBemVindo.png" action="cadastro.php" alt="">
-        </div>
-        <div class="rightSide">
-            <h1>Crie uma conta</h1>
+    <h1>Bateria</h1>
 
-            <form method="POST" class="b7validator">
-                <label for="">
-                    Seu nome: <br>
-                    <input type="text" name="name" data-rules="required|min=2">
-                </label>
-                <label for="">
-                    Seu email: <br>
-                    <input type="text" name="email" data-rules="email">
-                </label>
-                <label for="">
-                    Sua senha: <br>
-                    <input type="password" name="password" data-rules="required|min=4">
-                </label>
-                <label for="">
-                    <input type="submit" class="button" value="Cadastrar">
-                </label>
-            </form>
+    <div class="keys">
+        <div data-key="keyq" class="key">Q</div>
+        <div data-key="keyw" class="key">W</div>
+        <div data-key="keye" class="key">E</div>
 
-            <div>
-                Já tem uma conta? <a href="#">Faça seu Login</a>
-            </div>
-        </div>
+        <div data-key="keya" class="key">A</div>
+        <div data-key="keys" class="key">S</div>
+        <div data-key="keyd" class="key">D</div>
+
+        <div data-key="keyz" class="key">Z</div>
+        <div data-key="keyx" class="key">X</div>
+        <div data-key="keyc" class="key">C</div>
     </div>
+    <div class="composer">
+        <input type="text" id="input" placeholder="Faça uma composição..." />
+        <button >Tocar</button>
+    </div>
+
+    <footer>Criado pela B7Web</footer>
+
+    <audio id="s_keyq" src="assets/sounds/keyq.wav"></audio>
+    <audio id="s_keyw" src="assets/sounds/keyw.wav"></audio>
+    <audio id="s_keye" src="assets/sounds/keye.wav"></audio>
+    <audio id="s_keya" src="assets/sounds/keya.wav"></audio>
+    <audio id="s_keys" src="assets/sounds/keys.wav"></audio>
+    <audio id="s_keyd" src="assets/sounds/keyd.wav"></audio>
+    <audio id="s_keyz" src="assets/sounds/keyz.wav"></audio>
+    <audio id="s_keyx" src="assets/sounds/keyx.wav"></audio>
+    <audio id="s_keyc" src="assets/sounds/keyc.wav"></audio>
     
     <script src="assets/js/script.js"></script>
 </body>

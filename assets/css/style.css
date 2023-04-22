@@ -1,55 +1,69 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    margin: 0;
-}
-
-.screen{
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.leftSide {
-    flex: 1;
+h1 {
+    color: #FFF;
+    margin-bottom: 20px;
+}
+.keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.key {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #FFF;
+    color: #FFF;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.key.active {
+    border: 2px solid #FF0;
+    color: #FF0;
 }
 
-.leftSide img {
-    max-width: 500px;
-    height: auto;
+.composer {
+    width: 260px;
+    margin-top: 20px;
 }
-
-.rightSide {
-    width: 400px;
-    background-color: #DDD;
-    padding: 50px;
-}
-
-.rightSide label {
-    display: block;
-    margin-bottom: 20px;
-}
-
-.rightSide input {
+.composer #input {
     width: 100%;
-    border: 1px solid #999;
-    border-radius: 5px;
-    padding: 8px;
-    font-size: 14px;
-    outline: 0;
+    outline: none;
+    font-size: 17px;
+    padding: 10px 15px;
 }
-
-.button {
-    cursor: pointer;
-    background-image: linear-gradient(to right, cadetblue, rgb(25, 121, 124));
-    color: white;
-}
-
-.error {
+.composer button {
+    width: 100%;
+    height: 40px;
+    background: none;
+    border: 2px solid #FFF;
+    color: #FFF;
     font-size: 16px;
-    color: red;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.composer button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    margin-top: 20px;
+    color: #FFF;
+    font-size: 13px;
 }
