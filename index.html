@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relógio Analógico</title>
+    <title>Clima</title>
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <h1>Relógio Analógico</h1>
+    <h1>Clima</h1>
 
-    <div class="relogio">
-        <div class="riscos">
-            <div class="risco" style="transform: rotate(0deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(30deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(60deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(90deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(120deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(150deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(180deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(210deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(240deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(270deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(300deg)"><div class="ponto"></div></div>
-            <div class="risco" style="transform: rotate(330deg)"><div class="ponto"></div></div>
-        </div>
-        <div class="ponteiros">
-            <div class="p p_s"></div>
-            <div class="p p_m"></div>
-            <div class="p p_h"></div>
-            <div class="encaixe"></div>
+    <form class="busca">
+        <input type="search" id="searchInput" />
+        <button>Buscar</button>
+    </form>
+
+    <div class="resultado">
+        <div class="titulo">--</div>
+
+        <div class="info">
+            <div class="temp">
+                <div class="tempTitulo">Temperatura</div>
+                <div class="tempInfo">-- <sup>ºC</sup></div>
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" />
+            </div>
+            <div class="vento">
+                <div class="ventoTitulo">Vento</div>
+                <div class="ventoInfo">-- <span>km/h</span></div>
+                <div class="ventoArea">
+                    <div class="ventoPonto" style="transform: rotate(0deg)"></div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="digital">--:--:--</div>
+
+    <div class="aviso"></div>
 
     <footer>Criado pela B7Web</footer>
 
