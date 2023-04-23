@@ -1,33 +1,79 @@
-function guiaPagina(className){
-    let element = document.querySelector(className);
-    window.scrollTo({
-        top: getPosition(element).y - 100,
-        behavior: 'smooth'
-    });
-    console.log('Passou por aqui!');
+//Initial Data
+let currentQuestion = 0;
+let correctAnswers = 0;
+
+showQuestion();
+
+//Events
+document.querySelector('.scoreArea button').addEventListener('click', resetEvent);
+
+//Functions
+function showQuestion() {
+    if(questions[currentQuestion]) {
+        let question = questions[currentQuestion];
+
+        let porcentBar = Math.floor((currentQuestion / questions.length) * 100);
+
+        document.querySelector('.progress--bar').style.width = `${porcentBar}%`;
+
+        document.querySelector('.scoreArea').style.display = 'none';
+        document.querySelector('.questionArea').style.display = 'block';
+
+        document.querySelector('.question').innerHTML = question.question;
+        document.querySelector('.options').innerHTML = '';
+
+        let optionHtml = '';
+        for(let i in question.options) {
+            optionHtml += `<div data-op="${i}" class="option"><span>${parseInt(i) + 1}</span>${question.options[i]}</div>`;
+        }
+
+        document.querySelector('.options').innerHTML = optionHtml;
+
+        document.querySelectorAll('.options .option').forEach(item => {
+            item.addEventListener('click', optionClickEvent);
+        });
+
+    }else{
+        finishQuiz();
+    }
 }
 
-function getPosition(el){
-    // default positions
-    var xPos = 0,
-        yPos = 0;
-    // loop
-    while (el) {
-        if ( el.tagName === "BODY" ){
-            // deal with browser quirks with body/window/document and page scroll
-            var xScroll = el.scrollLeft || document.documentElement.scrollLeft,
-                yScroll = el.scrollTop  || document.documentElement.scrollTop;
-            xPos += ( el.offsetLeft - xScroll + el.clientLeft );
-            yPos += ( el.offsetTop  - yScroll + el.clientTop );
-        } else {
-           // for all other non-BODY elements
-           xPos += ( el.offsetLeft - el.scrollLeft + el.clientLeft );
-           yPos += ( el.offsetTop  - el.scrollTop  + el.clientTop );
-        }
-        el = el.offsetParent;
+function optionClickEvent(e) {
+    let clickOption = parseInt(e.target.getAttribute('data-op'));
+
+    if(questions[currentQuestion].answer === clickOption) {
+        correctAnswers++;       
     }
-    return {
-       x: xPos,
-       y: yPos
-    };
-};
+
+    currentQuestion++;
+    showQuestion();
+}
+
+function finishQuiz() {
+    let points = Math.floor((correctAnswers / questions.length) * 100);
+
+    if(points < 30) {
+        document.querySelector('.scoreText1').innerHTML = 'Tá ruim em?!';
+        document.querySelector('.scorePct').style.color = '#FF0000';
+    }else if (points >= 30 && points < 70) {
+        document.querySelector('.scoreText1').innerHTML = 'Muito bem!';
+        document.querySelector('.scorePct').style.color = '#FFFF00';
+    }else if (points > 70){
+        document.querySelector('.scoreText1').innerHTML = 'Parabéns';
+        document.querySelector('.scorePct').style.color = '#0D630D';
+    }
+
+    document.querySelector('.scorePct').innerHTML = `Acertou ${points}%`;
+    document.querySelector('.scoreText2').innerHTML = `Você respondeu ${questions.length} questões e acertou ${correctAnswers}.`;
+
+
+    document.querySelector('.scoreArea').style.display = 'block';
+    document.querySelector('.questionArea').style.display = 'none';   
+    document.querySelector('.progress--bar').style.width = '100%';
+}
+
+function resetEvent() {
+    correctAnswers = 0;
+    currentQuestion = 0;
+    showQuestion();
+}
