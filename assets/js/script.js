@@ -7,11 +7,15 @@ let numeros = document.querySelector('.d-1-3');
 
 let etapaAtual = 0;
 let numero = '';
+let votoBranco = false;
+let votos = [];
 
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
 
     let numeroHTML = '';
+    numero = '';
+    votoBranco = false;
 
     for (let i = 0; i < etapa.numeros; i++){
         if (i === 0) {
@@ -49,7 +53,12 @@ function atualizaInterface() {
         
         let fotosHtml = '';
         for (let i in candidatoAtual.fotos) {
-            fotosHtml += `<div class="d-1-image"><img src="assets/images/${candidatoAtual.fotos[i].url}" alt="foto do candidato" />${candidatoAtual.fotos[i].legenda}</div>`
+            if (candidatoAtual.fotos[i].small) {
+                fotosHtml += `<div class="d-1-image small"><img src="assets/images/${candidatoAtual.fotos[i].url}" alt="foto do candidato" />${candidatoAtual.fotos[i].legenda}</div>`;
+            }else{
+                fotosHtml += `<div class="d-1-image"><img src="assets/images/${candidatoAtual.fotos[i].url}" alt="foto do candidato" />${candidatoAtual.fotos[i].legenda}</div>`
+            }
+            
         }
 
         lateral.innerHTML = fotosHtml;
@@ -76,15 +85,47 @@ function clicou(n) {
 }
 
 function branco() {
-    alert("Clicou em Branco");
+    numero = '';
+    votoBranco = true;
+    seuVotoPara.style.display = 'block';
+    aviso.style.display = 'block';
+    numeros.innerHTML = '';
+    lateral.innerHTML = '';
+    descricao.innerHTML = '<div class="aviso--grande pisca">VOTO EM BRANCO</div>';
 }
 
 function corrige() {
-    alert("Clicou em Corrige");
+    comecarEtapa();
 }
 
 function confirma() {
-    alert("Clicou em Confirma");
+    let etapa = etapas[etapaAtual];
+
+    let votoConfirmado = false;
+
+    if (votoBranco) {
+        votoConfirmado = true;
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: 'branco'
+        });
+    } else if (numero.length === etapa.numeros) {
+        votoConfirmado = true;
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: numero
+        });
+    }
+
+    if (votoConfirmado) {
+        etapaAtual++;
+        if (etapas[etapaAtual] !== undefined) {
+            comecarEtapa();
+        } else {
+            document.querySelector('.tela').innerHTML = '<div class="aviso--gigante pisca">FIM</div>';
+            console.log(votos);
+        }
+    }
 }
 
 comecarEtapa();
