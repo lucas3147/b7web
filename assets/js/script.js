@@ -1,33 +1,40 @@
-function guiaPagina(className){
-    let element = document.querySelector(className);
-    window.scrollTo({
-        top: getPosition(element).y - 100,
-        behavior: 'smooth'
-    });
-    console.log('Passou por aqui!');
+let textarea = document.querySelector('#textarea');
+let voices = document.querySelector('#voices');
+let button = document.querySelector('#button');
+let selectedVoice = 0;
+
+window.speechSynthesis.addEventListener('voiceschanged', () => {
+    let voicesList = window.speechSynthesis.getVoices();
+    for(let i in voicesList) {
+        let optionEl = document.createElement('option');
+        optionEl.setAttribute('value', i);
+        optionEl.innerText = voicesList[i].name;
+        voices.appendChild(optionEl);
+    }
+});
+
+button.addEventListener('click', () => {
+    if(textarea.value !== '') {
+        let voicesList = window.speechSynthesis.getVoices();
+
+        let ut = new SpeechSynthesisUtterance(textarea.value);
+        ut.voice = voicesList[selectedVoice];
+        window.speechSynthesis.speak(ut);
+    }
+});
+
+voices.addEventListener('change', () => {
+    selectedVoice = parseInt(voices.value);
+})
+
+function updateStatus() {
+    if (window.speechSynthesis.speaking) {
+        voices.setAttribute('disabled', 'disabled');
+        button.setAttribute('disabled', 'disabled');
+    } else {
+        voices.removeAttribute('disabled');
+        button.removeAttribute('disabled');
+    }
 }
 
-function getPosition(el){
-    // default positions
-    var xPos = 0,
-        yPos = 0;
-    // loop
-    while (el) {
-        if ( el.tagName === "BODY" ){
-            // deal with browser quirks with body/window/document and page scroll
-            var xScroll = el.scrollLeft || document.documentElement.scrollLeft,
-                yScroll = el.scrollTop  || document.documentElement.scrollTop;
-            xPos += ( el.offsetLeft - xScroll + el.clientLeft );
-            yPos += ( el.offsetTop  - yScroll + el.clientTop );
-        } else {
-           // for all other non-BODY elements
-           xPos += ( el.offsetLeft - el.scrollLeft + el.clientLeft );
-           yPos += ( el.offsetTop  - el.scrollTop  + el.clientTop );
-        }
-        el = el.offsetParent;
-    }
-    return {
-       x: xPos,
-       y: yPos
-    };
-};
+setInterval(updateStatus, 100);
