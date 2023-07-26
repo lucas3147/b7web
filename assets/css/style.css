@@ -12,6 +12,8 @@ body {
     flex-direction: column;
     background-color: #333;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -121,4 +123,91 @@ footer {
     margin-top: 20px;
     color: #FFF;
     font-size: 13px;
+}
+
+
+
+
+
+/*   Animações - quente / frio   */
+@keyframes nuvem1 {
+    0% {top: 0; left: -100px}
+    25% {top: 0; left: 50%}
+    50% {top: 0; left: 100%}
+    75% {top: 0; left: 50%}
+    100% {top: 0; left: -100px;}
+}
+
+@keyframes nuvem2 {
+    0% {top: 80px; left: -100px}
+    25% {top: 80px; left: 50%}
+    50% {top: 80px; left: 100%}
+    75% {top: 80px; left: 50%}
+    100% {top: 80px; left: -100px;}
+}
+
+@keyframes nuvem3 {
+    0% {top: 160px; left: -100px}
+    25% {top: 160px; left: 50%}
+    50% {top: 160px; left: 100%}
+    75% {top: 160px; left: 50%}
+    100% {top: 160px; left: -100px;}
+}
+
+.section-hot{
+    background-color: rgb(0, 129, 180);
+}
+
+.section-hot-clouds{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.section-hot-cloud {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-image: url('../images/nuvem.png');
+    background-size: cover;
+    background-position: center;
+    display: none;
+}
+
+.section-hot-cloud.p1{
+    top: 0;
+    left: -100px;
+    animation-name: nuvem1;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+.section-hot-cloud.p2 {
+    top: 80px;
+    left: -100px;
+    animation-name: nuvem2;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+.section-hot-cloud.p3 {
+    top: 160px;
+    left: 0;
+    left: -100px;
+    animation-name: nuvem3;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
+}
+
+.section-hot-sun {
+    height: 50px;
+    width: 50px;
+    background-image: linear-gradient(0deg, orange, yellow);
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-left: 80%;
+    display: none;
 }
