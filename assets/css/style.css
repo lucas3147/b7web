@@ -129,7 +129,7 @@ footer {
 
 
 
-/*   Animações - quente / frio   */
+/*   Animações - quente   */
 @keyframes nuvem1 {
     0% {top: 0; left: -100px}
     25% {top: 0; left: 50%}
@@ -210,4 +210,44 @@ footer {
     margin-top: 30px;
     margin-left: 80%;
     display: none;
+}
+
+
+/*  Animações - frio */
+@keyframes neve { 
+    0% { 
+        transform-origin: center center; 
+        transform: rotate(-360deg); 
+    }
+    100% {
+        transform-origin: center center; 
+        transform: rotate(0); 
+    } 
+}
+
+.section-cold{
+    background-color: rgb(94, 140, 192);
+}
+
+.section-cold-snow {
+    position: absolute;
+    animation: neve 5s linear infinite;
+    background-image: url('../images/neve.png');
+    background-size: cover;
+    background-position: center;
+    display: none;
+}
+
+.section-cold-snow.p1{
+    height: 200px;
+    width: 200px;
+    top: 200px;
+    left: -50px;
+}
+
+.section-cold-snow.p2{
+    height: 150px;
+    width: 150px;
+    top: 20px;
+    left: calc(100vw - 100px);
 }

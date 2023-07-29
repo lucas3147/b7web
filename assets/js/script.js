@@ -34,6 +34,7 @@ document.querySelector('.busca').addEventListener('submit', async (event) => {
     {
         clearInfo();
         clearTempHot();
+        clearTempCold();
     }
 
 })
