@@ -172,14 +172,15 @@ footer {
     background-size: cover;
     background-position: center;
     display: none;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 .section-hot-cloud.p1{
     top: 0;
     left: -100px;
     animation-name: nuvem1;
-    animation-duration: 40s;
-    animation-iteration-count: infinite;
+    animation-duration: 50s;
     animation-delay: 1s;
 }
 
@@ -187,8 +188,7 @@ footer {
     top: 80px;
     left: -100px;
     animation-name: nuvem2;
-    animation-duration: 40s;
-    animation-iteration-count: infinite;
+    animation-duration: 47s;
     animation-delay: 2s;
 }
 
@@ -197,9 +197,8 @@ footer {
     left: 0;
     left: -100px;
     animation-name: nuvem3;
-    animation-duration: 40s;
-    animation-iteration-count: infinite;
-    animation-delay: 5s;
+    animation-duration: 48s;
+    animation-delay: 3s;
 }
 
 .section-hot-sun {
@@ -250,4 +249,41 @@ footer {
     width: 150px;
     top: 20px;
     left: calc(100vw - 100px);
+}
+
+
+/*  Git  */
+@keyframes git { 
+    0% {
+        transform: translateY(0); 
+    }
+    25% {
+        transform: translateY(-20px); 
+    }
+    50% {
+        transform: translateY(0px); 
+    }
+    75% {
+        transform: translateY(-10px); 
+    }
+    100% {
+        transform: translateY(0px); 
+    }
+}
+
+.meu-git{
+    height: 50px;
+    width: 50px;
+    background-image: url('../images/github.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: calc(100vh - 75px);
+    left: calc(100vw - 75px);
+    text-decoration: none;
+}
+
+.meu-git:hover {
+    animation-name: git;
+    animation-duration: 1s;
 }

@@ -28,6 +28,8 @@ document.querySelector('.busca').addEventListener('submit', async (event) => {
         }else{
             clearInfo();
             showWarning('Não encontramos essa localização');
+            clearTempHot();
+            clearTempCold();
         }
     } 
     else
