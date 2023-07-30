@@ -289,9 +289,9 @@ footer {
 }
 
 
-@media (max-width: 450px) {
+@media (min-width: 0px) and (max-width: 600px) {
     .meu-git{
-        top: calc(100vh - 100px);
+        top: calc(100vh - 115px);
     }
 
     .section-cold-snow.p1{
@@ -299,5 +299,11 @@ footer {
         width: 100px;
         top: 15px;
         left: -15px;
+    }
+
+    .section-cold-snow.p2{
+        width: 150px;
+        height: 150px;
+        left: calc(100vw - 120px);
     }
 }
