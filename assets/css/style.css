@@ -287,3 +287,17 @@ footer {
     animation-name: git;
     animation-duration: 1s;
 }
+
+
+@media (min-width: 350px) and (max-width: 450px) {
+    .meu-git{
+        top: calc(100vh - 100px);
+    }
+
+    .section-cold-snow.p1{
+        height: 100px;
+        width: 100px;
+        top: 15px;
+        left: -15px;
+    }
+}
